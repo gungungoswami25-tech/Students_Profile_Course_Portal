@@ -3,9 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>feedback form</title>
 </head>
 <body>
+    <header>
+        <h1>WELCOME TO MY STUDENT PORTAL</h1> 
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="feedback.html">Feedback</a></li>
+            <li><a href="grades.html">Grades</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            
+        </ul>
+
+    <h1>Submit Feedback</h1>
+        
+<form>
     
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name"><br><br>
+
+    
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email"><br><br>
+
+    
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="male">
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label><br><br>
+
+    
+    <label for="type">Feedback Type:</label>
+    <select id="type" name="type">
+      <option value="website">Website</option>
+      <option value="courses">Courses</option>
+      <option value="support">Support</option>
+    </select><br><br>
+
+    
+    <label for="message">Comments:</label><br>
+    <textarea id="message" name="message" rows="5" cols="40"></textarea><br><br>
+
+    
+    <input type="checkbox" id="subscribe" name="subscribe">
+    <label for="subscribe">Subscribe to newsletter</label><br><br>
+
+    
+    <button type="submit">Submit Feedback</button>
+  </form>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
