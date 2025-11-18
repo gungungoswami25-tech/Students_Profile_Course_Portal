@@ -1,0 +1,98 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffeef5;
+    
+}
+
+header {
+    background-color: #ffb3c6;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+nav.icecream {
+    background-color: #ffe6ee;
+    padding: 10px;
+    text-align: center;
+}
+
+nav.icecream ul {
+    list-style: none;
+    
+}
+
+nav.icecream li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav.icecream a {
+    text-decoration: none;
+    padding: 8px 15px;
+    background-color: #ffccd9;
+    border-radius: 20px;
+    color: #333;
+    
+}
+
+nav.icecream a:hover {
+    background-color: #ff9db8;
+    color: white;
+}
+
+
+h1 {
+    text-align: center;
+}
+
+p {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+
+
+hr {
+    border: 1px solid #ffb3c6;
+}
+
+
+form.gungun {
+    width: 50%;
+    margin: 30px auto;
+    background-color: #ffe6f0;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+
+form.gungun input {
+    width: 90%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ffb3c6;
+    border-radius: 5px;
+}
+
+form.gungun button {
+    background-color: #ff99b7;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+form.gungun button:hover {
+    background-color: #ff7aa1;
+}
+
+h4 {
+    text-align: center;
+}

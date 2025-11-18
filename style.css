@@ -1,133 +1,77 @@
-
+/* Body */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f7fc;
-    
+    margin: 0;
+    padding: 0;
+    background-color: #fff0f6;
 }
 
+/* Header */
 header {
-    background-color: #4a6cf7;
+    background-color: #ffb3c6;
     padding: 20px;
     text-align: center;
-}
-
-header h1 {
     color: white;
-    font-size: 32px;
 }
 
-
-nav {
-    background-color: #2f3b52;
+/* Navigation */
+nav.icecream {
+    background-color: #ffe6ee;
     padding: 10px;
 }
 
-nav ul {
+nav.icecream ul {
     list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 18px;
-    padding: 8px 14px;
-    border-radius: 6px;
-    transition: 0.3s;
-}
-
-nav ul li a:hover {
-    background-color: #4a6cf7;
-}
-
-
-img {
-    display: block;
-    margin: 30px auto;
-    width: 300px;
-    border-radius: 10px;
-}
-
-* {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f7fc;
-    color: #333;
-    line-height: 1.6;
-}
-
-
-header {
-    background-color: #4a6cf7;
-    padding: 20px;
     text-align: center;
 }
 
-header h1 {
-    color: white;
-    font-size: 32px;
-    font-weight: bold;
+nav.icecream ul li {
+    display: inline-block;
+    margin: 0 12px;
 }
 
-
-nav {
-    background-color: #2f3b52;
-    padding: 10px 0;
-}
-
-nav ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    gap: 25px;         
-}
-
-nav ul li a {
+nav.icecream ul li a {
     text-decoration: none;
-    color: #ffffff;
-    font-size: 18px;
-    padding: 8px 14px;
-    border-radius: 6px;
-    transition: 0.3s;
+    color: #333;
+    font-weight: bold;
+    background-color: #ffccd9;
+    padding: 8px 15px;
+    border-radius: 20px;
 }
 
-nav ul li a:hover {
-    background-color: #4a6cf7;
+nav.icecream ul li a:hover {
+    background-color: #ff9eb8;
+    color: white;
 }
 
-
+/* Image */
 img {
     display: block;
-    margin: 30px auto;
+    margin: 20px auto;
     width: 300px;
     border-radius: 10px;
 }
 
-
+/* Main */
 main {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    background: rgb(227, 212, 212);
+    text-align: center;
+    margin: 20px;
+}
+
+main p {
+    background-color: #ffe6f0;
+    padding: 15px;
     border-radius: 10px;
-    text-align: center;
+    width: 70%;
+    margin: auto;
 }
 
-
+/* Footer */
 footer {
-    background-color: #2f3b52;
-    color: white;
+    background-color: #ffd9e8;
     text-align: center;
-    padding: 15px 0;
-    margin-top: 50px;
+    padding: 15px;
+    margin-top: 40px;
 }
-
-
-
