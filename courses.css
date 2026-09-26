@@ -1,118 +1,368 @@
-```css
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(135deg, #fff0f6, #f3e8ff, #e0f2fe);
-    color: #2d2d3a;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f8fc;
+    color: #25253a;
     line-height: 1.6;
 }
 
-/* Header */
+
+/* =========================================
+   HEADER
+   ========================================= */
 
 header {
-    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    background: linear-gradient(135deg, #5b21b6, #7c3aed, #db2777);
+
     color: white;
+
     text-align: center;
-    padding: 35px 20px;
+
+    padding: 42px 20px;
+
+    box-shadow: 0 8px 25px rgba(91, 33, 182, 0.20);
 }
 
 header h1 {
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    animation: fadeDown 0.8s ease;
 }
 
-/* Navbar */
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
 
 .icecream {
-    background: white;
-    padding: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     position: sticky;
+
     top: 0;
-    z-index: 100;
+
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    backdrop-filter: blur(12px);
+
+    padding: 15px 20px;
+
+    border-bottom: 1px solid #eeeaf7;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
 }
 
 .icecream ul {
     list-style: none;
+
     display: flex;
+
     justify-content: center;
-    gap: 10px;
+
+    align-items: center;
+
+    gap: 8px;
+
     flex-wrap: wrap;
 }
 
 .icecream a {
+    display: block;
+
     text-decoration: none;
+
     color: #4c1d95;
+
+    font-size: 0.95rem;
+
     font-weight: 600;
-    padding: 10px 18px;
-    border-radius: 25px;
-    transition: 0.3s;
+
+    padding: 10px 17px;
+
+    border-radius: 10px;
+
+    transition: 0.3s ease;
 }
 
 .icecream a:hover {
-    background: linear-gradient(135deg, #7c3aed, #ec4899);
     color: white;
+
+    background: linear-gradient(135deg, #7c3aed, #db2777);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 15px rgba(124, 58, 237, 0.20);
 }
 
-/* Page title */
+
+/* =========================================
+   PAGE TITLE
+   ========================================= */
 
 body > h1 {
     text-align: center;
-    color: #7c3aed;
-    margin: 45px 0 25px;
-    font-size: 2.3rem;
+
+    color: #5b21b6;
+
+    font-size: clamp(2rem, 5vw, 2.7rem);
+
+    margin: 55px auto 40px;
+
+    position: relative;
+
+    width: fit-content;
 }
 
-/* Course cards */
+body > h1::after {
+    content: "";
+
+    display: block;
+
+    width: 65px;
+
+    height: 4px;
+
+    margin: 12px auto 0;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #7c3aed,
+        #db2777
+    );
+}
+
+
+/* =========================================
+   COURSE CARD
+   ========================================= */
+
+/*
+   Your HTML has each course as:
+
+   h2
+   p
+   ol
+
+   CSS combines them visually into one card.
+*/
+
 
 body > h2 {
-    max-width: 850px;
-    margin: 25px auto 0;
-    padding: 25px 30px 10px;
+    width: min(90%, 900px);
+
+    margin: 30px auto 0;
+
+    padding: 28px 32px 10px;
+
     background: white;
+
+    color: #5b21b6;
+
+    font-size: 1.45rem;
+
     border-radius: 20px 20px 0 0;
-    color: #ec4899;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+
+    border: 1px solid #eeeaf7;
+
+    border-bottom: none;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+    transition: 0.3s ease;
 }
+
+
+/* Course description */
 
 body > p {
-    max-width: 850px;
+    width: min(90%, 900px);
+
     margin: 0 auto;
-    padding: 0 30px 15px;
+
+    padding: 5px 32px 18px;
+
     background: white;
-    color: #555;
+
+    color: #666679;
+
+    font-size: 1rem;
+
+    border-left: 1px solid #eeeaf7;
+
+    border-right: 1px solid #eeeaf7;
 }
+
+
+/* Course topics */
 
 body > ol {
-    max-width: 850px;
-    margin: 0 auto 30px;
-    padding: 10px 50px 25px;
+    width: min(90%, 900px);
+
+    margin: 0 auto 35px;
+
+    padding: 5px 32px 28px 55px;
+
     background: white;
+
     border-radius: 0 0 20px 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+
+    border: 1px solid #eeeaf7;
+
+    border-top: none;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.07);
+
+    transition: 0.3s ease;
 }
 
+
+/* List items */
+
 body > ol li {
-    padding: 8px;
+    padding: 9px 12px;
+
     margin: 5px 0;
+
+    color: #4b4b60;
+
+    border-radius: 8px;
+
+    transition: 0.25s ease;
 }
 
 body > ol li::marker {
     color: #7c3aed;
-    font-weight: bold;
+
+    font-weight: 700;
 }
 
 body > ol li:hover {
-    color: #ec4899;
-    transform: translateX(5px);
-    transition: 0.2s;
+    background: #faf5ff;
+
+    color: #5b21b6;
+
+    transform: translateX(6px);
 }
 
-/* Mobile */
+
+/* =========================================
+   COURSE CARD HOVER
+   ========================================= */
+
+body > h2:hover {
+    color: #db2777;
+}
+
+
+/* =========================================
+   DIFFERENT COURSE ACCENTS
+   ========================================= */
+
+/* HTML & CSS */
+
+body > h2:nth-of-type(1) {
+    border-top: 4px solid #f97316;
+}
+
+/* JavaScript */
+
+body > h2:nth-of-type(2) {
+    border-top: 4px solid #eab308;
+}
+
+/* Life Skills */
+
+body > h2:nth-of-type(3) {
+    border-top: 4px solid #14b8a6;
+}
+
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 35px 15px;
+    }
+
+    .icecream {
+        padding: 12px;
+    }
+
+    .icecream a {
+        padding: 9px 13px;
+
+        font-size: 0.9rem;
+    }
+
+    body > h1 {
+        margin-top: 45px;
+    }
+
+    body > h2,
+    body > p,
+    body > ol {
+        width: 92%;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 600px) {
 
@@ -120,22 +370,73 @@ body > ol li:hover {
         font-size: 1.5rem;
     }
 
+    .icecream {
+        position: static;
+    }
+
     .icecream ul {
         flex-direction: column;
-        align-items: center;
+
+        width: 100%;
+    }
+
+    .icecream li {
+        width: 100%;
     }
 
     .icecream a {
-        width: 200px;
-        display: block;
+        width: 100%;
+
         text-align: center;
     }
 
-    body > h2,
-    body > p,
+    body > h1 {
+        font-size: 2rem;
+
+        margin-top: 35px;
+
+        margin-bottom: 30px;
+    }
+
+    body > h2 {
+        font-size: 1.25rem;
+
+        padding: 23px 22px 10px;
+    }
+
+    body > p {
+        padding: 5px 22px 18px;
+
+        font-size: 0.95rem;
+    }
+
     body > ol {
-        margin-left: 15px;
-        margin-right: 15px;
+        padding: 5px 22px 25px 45px;
+
+        margin-bottom: 25px;
+    }
+
+    body > ol li {
+        font-size: 0.95rem;
     }
 }
-```
+
+
+/* =========================================
+   VERY SMALL DEVICES
+   ========================================= */
+
+@media (max-width: 380px) {
+
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    body > h1 {
+        font-size: 1.7rem;
+    }
+
+    body > h2 {
+        font-size: 1.15rem;
+    }
+}

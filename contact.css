@@ -1,205 +1,421 @@
-```css
+/* ==============================
+   CONTACT PAGE - STUDENT PORTAL
+   ============================== */
+
+/* ---------- Reset ---------- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ---------- Body ---------- */
 body {
     font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(135deg, #fff0f6, #f3e8ff, #e0f2fe);
+    background: #f7f8fc;
     color: #2d2d3a;
+    min-height: 100vh;
     line-height: 1.6;
 }
 
-/* Header */
-
+/* ---------- Header ---------- */
 header {
-    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    background: linear-gradient(
+        135deg,
+        #5b21b6,
+        #7c3aed,
+        #db2777
+    );
+
     color: white;
     text-align: center;
+
     padding: 35px 20px;
+
+    box-shadow: 0 5px 20px rgba(91, 33, 182, 0.2);
 }
 
 header h1 {
-    font-size: 2.2rem;
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-/* Navbar */
+/* ---------- Main Navigation ---------- */
+body > nav:first-of-type {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
 
-.icecream {
-    background: white;
-    padding: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
 }
 
-.icecream ul {
+body > nav:first-of-type ul {
     list-style: none;
+
     display: flex;
     justify-content: center;
+    align-items: center;
+
     gap: 10px;
+    padding: 15px 20px;
+
     flex-wrap: wrap;
 }
 
-.icecream a {
+body > nav:first-of-type a {
     text-decoration: none;
     color: #4c1d95;
+
+    font-size: 0.95rem;
     font-weight: 600;
-    padding: 10px 18px;
+
+    padding: 9px 15px;
     border-radius: 25px;
-    transition: 0.3s;
+
+    transition: all 0.3s ease;
 }
 
-.icecream a:hover {
-    background: linear-gradient(135deg, #7c3aed, #ec4899);
-    color: white;
+body > nav:first-of-type a:hover {
+    background: #f3e8ff;
+    color: #db2777;
+    transform: translateY(-2px);
 }
 
-/* Contact title */
-
+/* ---------- Contact Heading ---------- */
 body > h1 {
+    width: min(90%, 900px);
+
+    margin: 50px auto 20px;
+
     text-align: center;
-    color: #7c3aed;
-    margin: 45px 20px 20px;
+
+    color: #4c1d95;
+
+    font-size: clamp(2rem, 5vw, 2.7rem);
 }
 
-/* Description */
-
+/* ---------- Introduction ---------- */
 body > p {
-    max-width: 850px;
-    margin: auto;
+    width: min(90%, 850px);
+
+    margin: 0 auto 30px;
+
+    padding: 25px 30px;
+
     background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+
+    border: 1px solid #eeeaf7;
+    border-radius: 16px;
+
     text-align: center;
+
+    color: #555568;
+
+    box-shadow: 0 10px 30px rgba(76, 29, 149, 0.07);
+
+    animation: fadeUp 0.6s ease;
 }
 
-/* Contact details */
+/* ---------- Contact Information ---------- */
+body > nav:nth-of-type(2) {
+    width: min(90%, 850px);
 
-body > nav:not(.icecream) {
-    max-width: 700px;
-    margin: 30px auto;
+    margin: 0 auto 35px;
+
+    padding: 25px;
+
     background: white;
-    padding: 30px;
-    border-radius: 20px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+
+    border: 1px solid #eeeaf7;
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(76, 29, 149, 0.08);
 }
 
-body > nav:not(.icecream) ul {
+body > nav:nth-of-type(2) ul {
     list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 14px;
 }
 
-body > nav:not(.icecream) li {
-    padding: 12px;
-    margin: 8px 0;
-    background: #fff4fa;
+body > nav:nth-of-type(2) li {
+    padding: 14px 18px;
+
+    background: #faf8ff;
+
+    border-left: 4px solid #7c3aed;
     border-radius: 10px;
+
+    color: #4c1d95;
+
+    font-weight: 600;
+
+    transition: all 0.3s ease;
 }
 
-body > nav:not(.icecream) a {
-    color: #7c3aed;
-    font-weight: bold;
+body > nav:nth-of-type(2) li:hover {
+    transform: translateX(5px);
+
+    background: #f3e8ff;
+}
+
+/* ---------- Social Link ---------- */
+body > nav:nth-of-type(2) a {
+    color: #db2777;
+
     text-decoration: none;
+
+    font-weight: 700;
+
+    transition: color 0.3s ease;
 }
 
-body > nav:not(.icecream) a:hover {
-    color: #ec4899;
+body > nav:nth-of-type(2) a:hover {
+    color: #7c3aed;
+    text-decoration: underline;
 }
 
-/* Horizontal line */
+/* ---------- Divider ---------- */
+body > hr {
+    width: 70px;
+    height: 4px;
 
-hr {
-    width: 80%;
     margin: 35px auto;
+
     border: none;
-    border-top: 2px solid #e9d5ff;
+    border-radius: 10px;
+
+    background: linear-gradient(
+        90deg,
+        #7c3aed,
+        #db2777
+    );
 }
 
-/* Contact form */
-
+/* ---------- Contact Form ---------- */
 .gungun {
-    max-width: 650px;
-    margin: 30px auto;
-    padding: 35px;
+    width: min(90%, 650px);
+
+    margin: 0 auto 35px;
+
+    padding: 35px 40px;
+
     background: white;
-    border-radius: 25px;
-    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+
+    border: 1px solid #eeeaf7;
+    border-radius: 20px;
+
+    box-shadow:
+        0 15px 40px rgba(76, 29, 149, 0.1);
+
+    animation: fadeUp 0.8s ease;
+}
+
+/* ---------- Remove h4 Default Styling ---------- */
+body > h4 {
+    font-size: 1rem;
+    font-weight: normal;
 }
 
 .gungun label {
+    display: inline-block;
+
+    margin-bottom: 7px;
+
     color: #4c1d95;
+
     font-weight: 600;
 }
 
-.gungun input {
+/* ---------- Inputs ---------- */
+.gungun input[type="text"],
+.gungun input[type="email"],
+.gungun input[type="number"] {
     width: 100%;
-    margin-top: 8px;
-    padding: 13px;
-    border: 2px solid #eadcff;
-    border-radius: 12px;
+
+    padding: 12px 14px;
+
+    margin-bottom: 18px;
+
+    border: 1px solid #ddd6fe;
+    border-radius: 10px;
+
+    background: #fafaff;
+
+    color: #2d2d3a;
+
+    font-family: inherit;
+    font-size: 0.95rem;
+
     outline: none;
-    font-size: 1rem;
+
+    transition: all 0.3s ease;
 }
 
-.gungun input:focus {
-    border-color: #a855f7;
-    box-shadow: 0 0 0 4px rgba(168,85,247,0.12);
+/* ---------- Input Focus ---------- */
+.gungun input[type="text"]:focus,
+.gungun input[type="email"]:focus,
+.gungun input[type="number"]:focus {
+    border-color: #7c3aed;
+
+    background: white;
+
+    box-shadow:
+        0 0 0 3px rgba(124, 58, 237, 0.12);
 }
 
+/* ---------- Button ---------- */
 .gungun button {
+    display: block;
+
     width: 100%;
+
+    margin-top: 8px;
+
+    padding: 13px 20px;
+
     border: none;
-    padding: 14px;
-    border-radius: 25px;
-    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    border-radius: 10px;
+
+    background: linear-gradient(
+        135deg,
+        #7c3aed,
+        #db2777
+    );
+
     color: white;
+
+    font-family: inherit;
     font-size: 1rem;
-    font-weight: bold;
+    font-weight: 700;
+
     cursor: pointer;
-    transition: 0.3s;
+
+    box-shadow: 0 8px 20px rgba(124, 58, 237, 0.2);
+
+    transition: all 0.3s ease;
 }
 
 .gungun button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(124,58,237,0.25);
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 12px 25px rgba(124, 58, 237, 0.3);
 }
 
-/* Thank you */
+.gungun button:active {
+    transform: translateY(0);
+}
 
-body > h4:last-child {
+/* ---------- Thank You Message ---------- */
+body > h4:last-of-type {
+    width: min(90%, 650px);
+
+    margin: 0 auto 50px;
+
+    padding: 20px;
+
     text-align: center;
+
     color: #7c3aed;
-    margin: 40px 20px;
-    font-size: 1.1rem;
+
+    background: #faf8ff;
+
+    border-radius: 15px;
 }
 
-/* Mobile */
+/* ---------- Animation ---------- */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 
-@media (max-width: 600px) {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 768px) {
+
+    header {
+        padding: 28px 15px;
+    }
+
+    body > nav:first-of-type ul {
+        gap: 5px;
+        padding: 12px 10px;
+    }
+
+    body > nav:first-of-type a {
+        font-size: 0.85rem;
+        padding: 8px 11px;
+    }
+
+    .gungun {
+        width: 92%;
+        padding: 30px;
+    }
+}
+
+/* ---------- Mobile ---------- */
+@media (max-width: 520px) {
 
     header h1 {
         font-size: 1.5rem;
     }
 
-    .icecream ul {
+    body > nav:first-of-type ul {
         flex-direction: column;
-        align-items: center;
+        gap: 3px;
     }
 
-    .icecream a {
+    body > nav:first-of-type a {
+        display: block;
+
         width: 200px;
+
         text-align: center;
     }
 
-    body > p,
-    body > nav:not(.icecream),
+    body > h1 {
+        font-size: 2rem;
+        margin-top: 35px;
+    }
+
+    body > p {
+        padding: 20px;
+        font-size: 0.9rem;
+    }
+
+    body > nav:nth-of-type(2) {
+        width: 92%;
+        padding: 18px;
+    }
+
+    body > nav:nth-of-type(2) li {
+        font-size: 0.85rem;
+        padding: 12px;
+    }
+
     .gungun {
-        margin-left: 15px;
-        margin-right: 15px;
+        width: 94%;
+        padding: 25px 20px;
+        border-radius: 16px;
+    }
+
+    .gungun input[type="text"],
+    .gungun input[type="email"],
+    .gungun input[type="number"] {
+        font-size: 0.9rem;
     }
 }
-```

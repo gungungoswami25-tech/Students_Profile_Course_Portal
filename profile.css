@@ -1,139 +1,420 @@
-```css
+
+/* =========================================
+   STUDENT PORTAL - PROFILE PAGE
+   ========================================= */
+
+/* ---------- RESET ---------- */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(135deg, #fff0f6, #f3e8ff, #e0f2fe);
-    color: #2d2d3a;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f8fc;
+    color: #25253a;
     line-height: 1.7;
 }
 
-/* Header */
+
+/* =========================================
+   HEADER
+   ========================================= */
 
 header {
-    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    background: linear-gradient(135deg, #5b21b6, #7c3aed, #db2777);
     color: white;
+
     text-align: center;
-    padding: 35px 20px;
+
+    padding: 42px 20px;
+
+    box-shadow: 0 8px 25px rgba(91, 33, 182, 0.20);
 }
 
 header h1 {
-    font-size: 2.2rem;
-    letter-spacing: 2px;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    animation: fadeDown 0.8s ease;
 }
 
-/* Navigation */
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
 
 .icecream {
-    background: white;
-    padding: 15px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(12px);
+
+    padding: 15px 20px;
+
+    border-bottom: 1px solid #eeeaf7;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
 }
 
 .icecream ul {
     list-style: none;
+
     display: flex;
     justify-content: center;
-    gap: 10px;
+    align-items: center;
+
+    gap: 8px;
     flex-wrap: wrap;
 }
 
 .icecream a {
+    display: block;
+
     text-decoration: none;
+
     color: #4c1d95;
+
+    font-size: 0.95rem;
     font-weight: 600;
-    padding: 10px 18px;
-    border-radius: 25px;
-    transition: 0.3s;
+
+    padding: 10px 17px;
+
+    border-radius: 10px;
+
+    transition: 0.3s ease;
 }
 
 .icecream a:hover {
-    background: linear-gradient(135deg, #7c3aed, #ec4899);
     color: white;
+
+    background: linear-gradient(135deg, #7c3aed, #db2777);
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 15px rgba(124, 58, 237, 0.20);
 }
 
-/* Profile image */
+
+/* =========================================
+   PROFILE IMAGE SECTION
+   ========================================= */
 
 main {
-    text-align: center;
-    padding: 45px 20px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 65px 20px 25px;
 }
 
 main img {
-    width: 230px;
-    height: 230px;
+    width: 250px;
+    height: 250px;
+
     object-fit: cover;
+
     border-radius: 50%;
+
     border: 7px solid white;
-    box-shadow: 0 15px 35px rgba(124, 58, 237, 0.25);
-    transition: 0.4s;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.15),
+        0 5px 20px rgba(124, 58, 237, 0.15);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+    animation: profileImage 1s ease;
 }
 
 main img:hover {
     transform: scale(1.05);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.18),
+        0 8px 25px rgba(124, 58, 237, 0.20);
 }
 
-/* Name */
 
-h2 {
+/* =========================================
+   INTRODUCTION
+   ========================================= */
+
+body > h2 {
+    width: min(90%, 850px);
+
+    margin: 15px auto 10px;
+
     text-align: center;
-    color: #7c3aed;
-    font-size: 2rem;
-    margin: 15px 0;
+
+    color: #5b21b6;
+
+    font-size: clamp(1.6rem, 4vw, 2.2rem);
+
+    font-weight: 700;
+
+    animation: fadeUp 0.8s ease;
 }
 
-h3 {
-    max-width: 850px;
-    margin: 30px auto 10px;
-    color: #ec4899;
-    font-size: 1.4rem;
+
+/* =========================================
+   ABOUT ME HEADING
+   ========================================= */
+
+body > h3 {
+    width: min(90%, 850px);
+
+    margin: 40px auto 15px;
+
+    color: #db2777;
+
+    font-size: 1.5rem;
+
+    font-weight: 700;
+
+    padding-left: 15px;
+
+    border-left: 5px solid #7c3aed;
 }
 
-/* About */
+
+/* =========================================
+   ABOUT ME CARD
+   ========================================= */
 
 body > p {
-    max-width: 850px;
-    margin: auto;
-    background: rgba(255,255,255,0.9);
-    padding: 30px;
+    width: min(90%, 850px);
+
+    margin: 0 auto;
+
+    padding: 30px 35px;
+
+    background: white;
+
+    border: 1px solid #eeeaf7;
+
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+
+    color: #555568;
+
+    font-size: 1.05rem;
+
+    line-height: 1.9;
+
+    animation: fadeUp 1s ease;
 }
 
-/* Information list */
+body > p strong {
+    color: #5b21b6;
+}
+
+body > p em {
+    color: #db2777;
+}
+
+
+/* =========================================
+   PROFILE INFORMATION LIST
+   ========================================= */
 
 body > ul {
-    max-width: 850px;
-    margin: 30px auto 60px;
-    padding: 30px 45px;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+    width: min(90%, 850px);
+
+    margin: 30px auto 70px;
+
+    padding: 25px;
+
+    list-style: none;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
 }
 
+
+/* Individual cards */
+
 body > ul li {
-    margin: 12px 0;
-    padding: 12px;
-    border-left: 4px solid #ec4899;
-    background: #fff7fb;
-    border-radius: 8px;
-    list-style-position: inside;
+    position: relative;
+
+    background: white;
+
+    border: 1px solid #eeeaf7;
+
+    border-radius: 16px;
+
+    padding: 20px 20px 20px 25px;
+
+    color: #555568;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+body > ul li::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 15px;
+    bottom: 15px;
+
+    width: 4px;
+
+    border-radius: 10px;
+
+    background: linear-gradient(
+        to bottom,
+        #7c3aed,
+        #db2777
+    );
 }
 
 body > ul li:hover {
-    background: #f5edff;
-    transform: translateX(5px);
-    transition: 0.3s;
+    transform: translateY(-5px);
+
+    border-color: #ddd0f7;
+
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.10);
 }
 
-/* Mobile */
+body > ul li strong {
+    color: #5b21b6;
+}
+
+
+/* =========================================
+   DIFFERENT CARD STYLING
+   ========================================= */
+
+body > ul li:nth-child(1) {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #fff7fb
+    );
+}
+
+body > ul li:nth-child(2) {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #f8f5ff
+    );
+}
+
+body > ul li:nth-child(3) {
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #f5faff
+    );
+}
+
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes profileImage {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 35px 15px;
+    }
+
+    .icecream {
+        padding: 12px;
+    }
+
+    .icecream a {
+        padding: 9px 13px;
+        font-size: 0.9rem;
+    }
+
+    main {
+        padding-top: 50px;
+    }
+
+    main img {
+        width: 220px;
+        height: 220px;
+    }
+
+    body > ul {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 600px) {
 
@@ -141,26 +422,82 @@ body > ul li:hover {
         font-size: 1.5rem;
     }
 
+    .icecream {
+        position: static;
+    }
+
     .icecream ul {
         flex-direction: column;
-        align-items: center;
+        width: 100%;
+    }
+
+    .icecream li {
+        width: 100%;
     }
 
     .icecream a {
-        display: block;
-        width: 200px;
+        width: 100%;
         text-align: center;
     }
 
-    body > p,
-    body > ul {
-        margin-left: 15px;
-        margin-right: 15px;
+    main {
+        padding: 40px 20px 20px;
     }
 
     main img {
-        width: 180px;
-        height: 180px;
+        width: 185px;
+        height: 185px;
+    }
+
+    body > h2 {
+        margin-top: 10px;
+    }
+
+    body > h3 {
+        margin-top: 30px;
+    }
+
+    body > p {
+        padding: 25px 22px;
+
+        font-size: 0.98rem;
+
+        line-height: 1.8;
+    }
+
+    body > ul {
+        width: 92%;
+        padding: 10px 0;
+
+        margin-bottom: 45px;
+    }
+
+    body > ul li {
+        padding: 18px;
     }
 }
-```
+
+
+/* =========================================
+   VERY SMALL DEVICES
+   ========================================= */
+
+@media (max-width: 380px) {
+
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    main img {
+        width: 160px;
+        height: 160px;
+    }
+
+    body > h2 {
+        font-size: 1.4rem;
+    }
+
+    body > h3 {
+        font-size: 1.25rem;
+    }
+}

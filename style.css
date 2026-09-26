@@ -1,7 +1,7 @@
-```css
-/* =========================
-   GLOBAL RESET
-========================= */
+
+/* =========================================
+   GENERAL STYLING
+   ========================================= */
 
 * {
     margin: 0;
@@ -9,127 +9,286 @@
     box-sizing: border-box;
 }
 
-body {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background: linear-gradient(135deg, #fff0f6, #f3e8ff, #e0f2fe);
-    color: #2d2d3a;
-    min-height: 100vh;
-    line-height: 1.6;
+html {
+    scroll-behavior: smooth;
 }
 
-/* =========================
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: #f7f8fc;
+    color: #25253a;
+    line-height: 1.7;
+}
+
+
+/* =========================================
    HEADER
-========================= */
+   ========================================= */
 
 header {
-    background: linear-gradient(135deg, #7c3aed, #ec4899);
+    background: linear-gradient(135deg, #5b21b6, #7c3aed, #db2777);
+
     color: white;
+
     text-align: center;
-    padding: 35px 20px;
-    box-shadow: 0 5px 20px rgba(124, 58, 237, 0.25);
+
+    padding: 42px 20px;
+
+    box-shadow: 0 8px 25px rgba(91, 33, 182, 0.20);
 }
 
 header h1 {
-    font-size: 2.3rem;
-    letter-spacing: 2px;
-    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    animation: fadeDown 0.8s ease;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+
+/* =========================================
+   NAVIGATION
+   ========================================= */
 
 .icecream {
-    background: rgba(255, 255, 255, 0.9);
-    backdrop-filter: blur(10px);
-    padding: 15px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     position: sticky;
+
     top: 0;
-    z-index: 100;
+
+    z-index: 1000;
+
+    background: rgba(255, 255, 255, 0.96);
+
+    backdrop-filter: blur(12px);
+
+    padding: 15px 20px;
+
+    border-bottom: 1px solid #eeeaf7;
+
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06);
 }
 
 .icecream ul {
     list-style: none;
+
     display: flex;
+
     justify-content: center;
+
     align-items: center;
-    gap: 10px;
+
+    gap: 8px;
+
     flex-wrap: wrap;
 }
 
 .icecream a {
+    display: block;
+
     text-decoration: none;
+
     color: #4c1d95;
+
+    font-size: 0.95rem;
+
     font-weight: 600;
-    padding: 10px 18px;
-    border-radius: 25px;
+
+    padding: 10px 17px;
+
+    border-radius: 10px;
+
     transition: 0.3s ease;
 }
 
 .icecream a:hover {
-    background: linear-gradient(135deg, #7c3aed, #ec4899);
     color: white;
+
+    background: linear-gradient(135deg, #7c3aed, #db2777);
+
     transform: translateY(-2px);
+
+    box-shadow: 0 6px 15px rgba(124, 58, 237, 0.20);
 }
 
-/* =========================
+
+/* =========================================
    HOME IMAGE
-========================= */
+   ========================================= */
 
 body > img {
     display: block;
-    width: min(90%, 700px);
-    height: 280px;
-    object-fit: cover;
-    margin: 45px auto 25px;
-    border-radius: 25px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-    transition: 0.4s ease;
+
+    width: min(90%, 850px);
+
+    height: 380px;
+
+    margin: 55px auto 30px;
+
+    padding: 15px;
+
+    background: white;
+
+    border: 1px solid #eeeaf7;
+
+    border-radius: 20px;
+
+    object-fit: contain;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.08),
+        0 5px 20px rgba(124, 58, 237, 0.08);
+
+    transition:
+        transform 0.4s ease,
+        box-shadow 0.4s ease;
+
+    animation: fadeUp 1s ease;
 }
 
 body > img:hover {
-    transform: scale(1.02);
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 20px 45px rgba(0, 0, 0, 0.12),
+        0 8px 25px rgba(124, 58, 237, 0.15);
 }
 
-/* =========================
+
+/* =========================================
    MAIN CONTENT
-========================= */
+   ========================================= */
 
 main {
-    max-width: 900px;
-    margin: 30px auto;
-    padding: 35px;
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    width: min(90%, 850px);
+
+    margin: 0 auto 60px;
+
+    padding: 30px 35px;
+
+    background: white;
+
+    border: 1px solid #eeeaf7;
+
+    border-radius: 20px;
+
     text-align: center;
+
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.07);
+
+    animation: fadeUp 1s ease;
 }
 
 main p {
-    font-size: 1.15rem;
-    color: #4b5563;
+    color: #555568;
+
+    font-size: 1.05rem;
+
+    line-height: 1.9;
 }
 
-/* =========================
+
+/* =========================================
    FOOTER
-========================= */
+   ========================================= */
 
 footer {
-    margin-top: 60px;
-    background: #2e1065;
+    background: linear-gradient(135deg, #5b21b6, #7c3aed, #db2777);
+
     color: white;
+
     text-align: center;
-    padding: 25px;
+
+    padding: 25px 20px;
+
+    margin-top: 40px;
+
+    box-shadow: 0 -5px 20px rgba(91, 33, 182, 0.10);
 }
 
 footer p {
     font-size: 0.95rem;
+
+    line-height: 1.8;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
+
+/* =========================================
+   ANIMATIONS
+   ========================================= */
+
+@keyframes fadeDown {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================================
+   TABLET
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 35px 15px;
+    }
+
+    .icecream {
+        padding: 12px;
+    }
+
+    .icecream a {
+        padding: 9px 13px;
+
+        font-size: 0.9rem;
+    }
+
+    body > img {
+        width: 90%;
+
+        height: 320px;
+
+        margin-top: 40px;
+    }
+
+    main {
+        width: 90%;
+
+        padding: 25px 30px;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+   ========================================= */
 
 @media (max-width: 600px) {
 
@@ -137,23 +296,81 @@ footer p {
         font-size: 1.5rem;
     }
 
+    .icecream {
+        position: static;
+    }
+
     .icecream ul {
         flex-direction: column;
+
+        width: 100%;
+    }
+
+    .icecream li {
+        width: 100%;
     }
 
     .icecream a {
-        display: block;
-        width: 200px;
+        width: 100%;
+
         text-align: center;
     }
 
     body > img {
-        height: 220px;
+        width: 92%;
+
+        height: 250px;
+
+        margin: 30px auto 25px;
+
+        padding: 10px;
+
+        border-radius: 16px;
     }
 
     main {
-        margin: 20px;
-        padding: 25px;
+        width: 92%;
+
+        padding: 25px 20px;
+
+        margin-bottom: 40px;
+    }
+
+    main p {
+        font-size: 0.98rem;
+
+        line-height: 1.8;
+    }
+
+    footer {
+        padding: 22px 15px;
     }
 }
-```
+
+
+/* =========================================
+   VERY SMALL DEVICES
+   ========================================= */
+
+@media (max-width: 380px) {
+
+    header h1 {
+        font-size: 1.3rem;
+    }
+
+    body > img {
+        height: 210px;
+    }
+
+    main {
+        padding: 22px 17px;
+    }
+
+    main p {
+        font-size: 0.94rem;
+    }
+
+    footer p {
+        font-size: 0.85rem;
+    }
+}
