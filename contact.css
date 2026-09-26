@@ -1,98 +1,205 @@
-body {
-    font-family: Arial;
-    background-color: #ffeef5;
-    
+```css
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #fff0f6, #f3e8ff, #e0f2fe);
+    color: #2d2d3a;
+    line-height: 1.6;
+}
+
+/* Header */
 
 header {
-    background-color: #ffb3c6;
-    padding: 20px;
-    text-align: center;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
     color: white;
-}
-
-nav.icecream {
-    background-color: #ffe6ee;
-    padding: 10px;
     text-align: center;
+    padding: 35px 20px;
 }
 
-nav.icecream ul {
+header h1 {
+    font-size: 2.2rem;
+}
+
+/* Navbar */
+
+.icecream {
+    background: white;
+    padding: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.icecream ul {
     list-style: none;
-    
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
 }
 
-nav.icecream li {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-nav.icecream a {
+.icecream a {
     text-decoration: none;
-    padding: 8px 15px;
-    background-color: #ffccd9;
-    border-radius: 20px;
-    color: #333;
-    
+    color: #4c1d95;
+    font-weight: 600;
+    padding: 10px 18px;
+    border-radius: 25px;
+    transition: 0.3s;
 }
 
-nav.icecream a:hover {
-    background-color: #ff9db8;
+.icecream a:hover {
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
     color: white;
 }
 
+/* Contact title */
 
-h1 {
+body > h1 {
     text-align: center;
+    color: #7c3aed;
+    margin: 45px 20px 20px;
 }
 
-p {
-    width: 80%;
+/* Description */
+
+body > p {
+    max-width: 850px;
     margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
     text-align: center;
-    font-size: 18px;
 }
 
+/* Contact details */
 
-
-
-hr {
-    border: 1px solid #ffb3c6;
-}
-
-
-form.gungun {
-    width: 50%;
+body > nav:not(.icecream) {
+    max-width: 700px;
     margin: 30px auto;
-    background-color: #ffe6f0;
-    padding: 20px;
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.07);
+}
+
+body > nav:not(.icecream) ul {
+    list-style: none;
+}
+
+body > nav:not(.icecream) li {
+    padding: 12px;
+    margin: 8px 0;
+    background: #fff4fa;
     border-radius: 10px;
 }
 
-
-
-form.gungun input {
-    width: 90%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ffb3c6;
-    border-radius: 5px;
+body > nav:not(.icecream) a {
+    color: #7c3aed;
+    font-weight: bold;
+    text-decoration: none;
 }
 
-form.gungun button {
-    background-color: #ff99b7;
+body > nav:not(.icecream) a:hover {
+    color: #ec4899;
+}
+
+/* Horizontal line */
+
+hr {
+    width: 80%;
+    margin: 35px auto;
     border: none;
-    padding: 10px 20px;
-    border-radius: 20px;
+    border-top: 2px solid #e9d5ff;
+}
+
+/* Contact form */
+
+.gungun {
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 35px;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.gungun label {
+    color: #4c1d95;
+    font-weight: 600;
+}
+
+.gungun input {
+    width: 100%;
+    margin-top: 8px;
+    padding: 13px;
+    border: 2px solid #eadcff;
+    border-radius: 12px;
+    outline: none;
+    font-size: 1rem;
+}
+
+.gungun input:focus {
+    border-color: #a855f7;
+    box-shadow: 0 0 0 4px rgba(168,85,247,0.12);
+}
+
+.gungun button {
+    width: 100%;
+    border: none;
+    padding: 14px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #7c3aed, #ec4899);
     color: white;
+    font-size: 1rem;
+    font-weight: bold;
     cursor: pointer;
-    margin-top: 10px;
+    transition: 0.3s;
 }
 
-form.gungun button:hover {
-    background-color: #ff7aa1;
+.gungun button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(124,58,237,0.25);
 }
 
-h4 {
+/* Thank you */
+
+body > h4:last-child {
     text-align: center;
+    color: #7c3aed;
+    margin: 40px 20px;
+    font-size: 1.1rem;
 }
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .icecream ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .icecream a {
+        width: 200px;
+        text-align: center;
+    }
+
+    body > p,
+    body > nav:not(.icecream),
+    .gungun {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+}
+```
